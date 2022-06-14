@@ -1,0 +1,29 @@
+<%- include('../partials/header') %>
+<table id="list">
+  <thead>
+    <tr>
+      <th>Img</th>
+      <th>Title</th>
+      <th>Completion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% games.forEach(function(m) { %>
+    <tr>
+      <td><%= g.img %></td>
+      <td><%= g.title %></td>
+      <td><%= g.completion %></td>
+      <td><a href="/games/<%= g._id %>">DETAILS</a></td>
+    </tr>
+    <% }); %>
+  </tbody>
+</table>
+<button>Open Modal</button>
+<div class="modal" id="modal">
+  <div class="modal-header">
+    <div class="title">modal title</div>
+  </div>
+  <div class="modal-body">lorem 80</div>
+</div>
+
+<%- include('../partials/footer') %>
