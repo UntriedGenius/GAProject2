@@ -3,8 +3,8 @@ const Achieve = require('../models/game').Achieve
 
 module.exports = {
   create,
-  edit
-  // deleteIt
+  edit,
+  deleteIt
 };
 
 function create(req, res) {
@@ -27,12 +27,32 @@ function edit(req, res){
 }
 
 // delete
-// function deleteIt(req, res){
-// Game.findById(req.params.movieId, function(err,game) {
-//   console.log(game.reviews.id(req.params.reviewID))
+function deleteIt(req, res) {
+  Game.findById(req.params.gameId, function(err, game){
+    Game.achievements.id(req.params.id).remove()
 
-//   game.reviews.id(req.params.reviewId).rating = 5
-//   game.save(function(err){
-//     if (err) console.log(err);
-//   })
-// })
+  //   console.log(req.params.gameId);
+  //   console.log(game.achievements.id(req.params.achievementId));
+
+
+    // console.log(game.achievements.id(req.params.achievementId));
+    // console.log(req.params.achievementId)
+    // console.log(game.achievements.id)
+    // SelAch =(Game.find));
+    // console.log(SelAch);
+    // Game.remove(SelAch)
+      
+      if(err){
+        res.status(400).json(err)
+        return
+      }
+      else{
+        a.save(function(err) {
+      if (err) return handleError(err);
+      res.redirect(`/games/${req.params.gameId}`)
+      // console.log('Item Deleted');
+    })
+    // res.redirect(`/games/${req.params.gameId}`)
+    }
+  })
+}
