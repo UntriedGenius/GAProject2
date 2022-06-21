@@ -15,9 +15,9 @@
   action="/games/<%= game._id %>/achievements"
 >
   <label>Name:</label>
-  <input type="text" name="Name"></input>
+  <input type="text" name="title"></input>
   <label>Description:</label>
-  <textarea name="Description"></textarea>
+  <textarea name="description"></textarea>
   <input type="submit" value="Add Achievement" />
 </form>
 
@@ -32,8 +32,8 @@
   <tbody>
     <% game.achievements.forEach(function(a) { %>
     <tr>
-      <td><%= a.Name %></td>
-      <td><%= a.Description %></td>
+      <td><%= a.title %></td>
+      <td><%= a.description %></td>
     </tr>
     <% }); %>
   </tbody>
