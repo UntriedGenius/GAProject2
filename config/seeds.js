@@ -1,15 +1,15 @@
 require('./database')
-const Gif = require('../models/game')
-const gifseeds = require('./seeds.json')
+const Game = require('../models/game')
+const gameseeds = require('./seeds.json')
 
 // const Bookmark = require('../models/game');
 // const bookmarkseeds = require('./seeds.json');
 
-Gif.deleteMany({})
+Game.deleteMany({})
 .then(() =>{
-  return Gif.insertMany(gifseeds)
-  .then((gifs) =>{
-    console.log((gifs));
+  return Game.insertMany(gameseeds)
+  .then((games) =>{
+    console.log((games));
   })
 })
 .finally(() => {

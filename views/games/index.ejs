@@ -8,7 +8,7 @@
     </tr>
   </thead>
   <tbody>
-    <% games.forEach(function(m) { %>
+    <% games.forEach(function(g) { %>
     <tr>
       <td><%= g.img %></td>
       <td><%= g.title %></td>
@@ -18,12 +18,26 @@
     <% }); %>
   </tbody>
 </table>
-<button>Open Modal</button>
-<div class="modal" id="modal">
-  <div class="modal-header">
-    <div class="title">modal title</div>
+<section>
+  <button data-modal-target="#modal">Open Modal</button>
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <div class="title">modal title</div>
+      <button data-close-button class="close-button">&times;</button>
+    </div>
+    <div class="modal-body">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quisquam
+      deserunt consequuntur sunt iste nulla provident non rem facilis a,
+      incidunt earum officia et voluptas. Quas magnam nam adipisci
+      exercitationem, quisquam excepturi officia eos culpa quaerat animi vel,
+      recusandae possimus expedita dolores accusantium distinctio pariatur
+      aliquid quo. Soluta labore amet deserunt molestiae eveniet laboriosam
+      dolorem veniam voluptatum nam laborum quia ratione exercitationem a et
+      nostrum ab porro, nemo autem itaque aut voluptatibus. Iste nobis, eius
+      ducimus eligendi est quisquam recusandae.
+    </div>
   </div>
-  <div class="modal-body">lorem 80</div>
-</div>
+  <div id="overlay"></div>
+</section>
 
 <%- include('../partials/footer') %>

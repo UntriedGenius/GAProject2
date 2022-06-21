@@ -3,12 +3,13 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+require('dotenv').config();
 require('./config/database');
 const methodOverride = require('method-override')
 
 const indexRouter = require('./routes/index');
 const gamesRouter = require('./routes/games');
-const achievmentsRouter = require('./routes/achievments')
+const achievementsRouter = require('./routes/achievements')
 
 const app = express();
 
@@ -25,7 +26,7 @@ app.use(methodOverride('X-HTTP-Method-Override'))
 
 app.use('/', indexRouter);
 app.use('/games', gamesRouter);
-app.use('/', achievmentsRouter)
+app.use('/', achievementsRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
