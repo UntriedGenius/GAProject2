@@ -1,31 +1,22 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const achievementSchema = new Schema({
-  title: {
-    type: String,
-    required: true
-  },
-  description: {
-    type: String,
-    required: true,
-  }
-})
-
-// const gameSchema = new Schema({
+// const achievementSchema = new Schema({
 //   title: {
 //     type: String,
+//     required: true
+//   },
+//   description: {
+//     type: String,
+//     required: true,
+//   }
+// })
 
-//   },
-//   completion: {
-//     type: String
-//   },
-//   // playing: { type: Boolean, default: false },
-//    // reviews is an array of review subdocs!
-//   achievements: [achievmentSchema]
-// }, {
-//   timestamps: true
-// });
+const achievementSchema = new Schema({
+  title: String,
+  description: String,
+
+})
 
 const gameSchema = new Schema({
   title: String,
@@ -35,5 +26,6 @@ const gameSchema = new Schema({
 
 })
 const Game = mongoose.model('Game', gameSchema);
+const Achieve = mongoose.model('Achievement', achievementSchema);
 
-module.exports = Game;
+module.exports = {Game, Achieve};

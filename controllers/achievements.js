@@ -1,4 +1,5 @@
-const Game = require('../models/game')
+const Game = require('../models/game').Game
+const Achieve = require('../models/game').Achieve
 
 module.exports = {
   create,
@@ -9,8 +10,10 @@ module.exports = {
 function create(req, res) {
   // remember req.body has the form data for the achievement
   // also the route indicates that we also have req.params.id
+  const achievement = new Achieve(req.body);
   Game.findById(req.params.id, function(err, game) {
-    game.achievements.push(req.body);
+    game.achievements.push(achievement);
+    console.log(req.body);
     game.save(function(err) {
       res.redirect(`/games/${game._id}`);
     });
