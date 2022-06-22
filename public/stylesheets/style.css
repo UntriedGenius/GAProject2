@@ -88,7 +88,7 @@ nav > a.active {
 }
 
 #add-achieve-form input[type="submit"]:hover {
-  border: solid black;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 #new-form input[type="submit"] {
@@ -127,7 +127,7 @@ table td {
 }
 
 #list a:hover {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 #show-page {
@@ -146,9 +146,16 @@ textarea {
   color: black;
 }
 
-#add-achieve-form input[name="Title"] {
+#add-achieve-form input[name="title"] {
   width: 50%;
-  height: 30px;
+  height: 75%;
+  transform: translate(0px, 4.5px);
+}
+
+#add-achieve-form textarea[name="description"] {
+  width: 90%;
+  height: 100%;
+  font-size: 0.75rem;
 }
 
 .delete-button {

@@ -26,6 +26,5 @@ const gameSchema = new Schema({
 
 })
 const Game = mongoose.model('Game', gameSchema);
-const Achieve = mongoose.model('Achievement', achievementSchema);
 
-module.exports = {Game, Achieve};
+module.exports = Game;

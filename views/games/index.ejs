@@ -2,7 +2,6 @@
 <table id="list">
   <thead>
     <tr>
-      <th>Img</th>
       <th>Title</th>
       <th>Completion</th>
     </tr>
@@ -10,15 +9,38 @@
   <tbody>
     <% games.forEach(function(g) { %>
     <tr>
-      <td><%= g.img %></td>
       <td><%= g.title %></td>
       <td><%= g.completion %></td>
-      <td><a href="/games/<%= g._id %>">DETAILS</a></td>
+      <td><a href="/games/<%= g._id %>">ACHIEVEMENTS</a></td>
+      <td><button class="support-btn" data-modal-target="#modal">NEW ACHIEVEMENT</button>
+        <div class="modal" id="modal">
+          <div class="modal-header">
+            <div class="title">modal title</div>
+            <button data-close-button class="close-button">&times;</button>
+          </div>
+          <div class="modal-body">
+            <!-- Achievements -->
+            <br /><br />
+            <h2>New Achievement</h2>
+            <form
+              id="add-achieve-form"
+              method="POST"
+              action="/games/<%= g._id %>/achievements"
+            >
+              <label>Name:</label>
+              <input type="text" name="title"></input>
+              <label>Description:</label>
+              <textarea name="description"></textarea>
+              <input type="submit" value="Add Achievement" />
+            </form>
+          </div>
+        </div>
+        <div id="overlay"></div></td>
     </tr>
     <% }); %>
   </tbody>
 </table>
-<section>
+<!-- <section>
   <button data-modal-target="#modal">Open Modal</button>
   <div class="modal" id="modal">
     <div class="modal-header">
@@ -34,10 +56,10 @@
       aliquid quo. Soluta labore amet deserunt molestiae eveniet laboriosam
       dolorem veniam voluptatum nam laborum quia ratione exercitationem a et
       nostrum ab porro, nemo autem itaque aut voluptatibus. Iste nobis, eius
-      ducimus eligendi est quisquam recusandae.
+      ducimus eligendi est quisquam recusandae. 
     </div>
   </div>
   <div id="overlay"></div>
-</section>
+</section> -->
 
 <%- include('../partials/footer') %>
